@@ -1,11 +1,17 @@
+/*J'ai mis en commentaire la igne delay pour eviter que la fenetre ne se ferme toute seule, + ajout de la fonction position souris*/
+
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "Position_SourisClicGauche.h"
 void SDL_ExitWithError(const char *message);
 
 
 int main(int argc, char** argv)
 {
+	int X, Y;
+	SDL_bool quit = SDL_FALSE
+	/*Ajout des variables utiles a la foncition position souris*/
 	SDL_Window *window = NULL ;
 	SDL_Renderer *renderer = NULL ;
 	int d, y, x,rayon=100, rayon2=50;
@@ -134,11 +140,11 @@ int main(int argc, char** argv)
 	
 	SDL_RenderPresent(renderer); /* mettre ecran noir*/
 	
-	SDL_Delay(5000); /* 5secondes d'attente avant de se fermer, PLUS TARD BOUCLE INFINI */
+	/*SDL_Delay(5000); /* 5secondes d'attente avant de se fermer, PLUS TARD BOUCLE INFINI */
 	
 	/*POSE----------------------------------------------------------*/
 	
-	
+	Position_SourisClicGauche(&X, &Y, quit);
 	
  
 	
